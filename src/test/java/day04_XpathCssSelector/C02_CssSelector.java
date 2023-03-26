@@ -29,18 +29,46 @@ public class C02_CssSelector {
         sec.click();
         //Delete butonu’nun gorunur oldugunu test edin
         System.out.println("Is delete button displayed:" +sec.isDisplayed());
+        Thread.sleep(2000);
 
         //Delete tusuna basin
-        WebElement del = sec.findElement(By.xpath("//*[@id='elements']/button"));
-        //WebElement del =driver.findElement(By.cssSelector("button[class='added-manually']"));
+        // WebElement del = sec.findElement(By.xpath("//*[@id='elements']/button"));
+       WebElement del =driver.findElement(By.cssSelector("button[onclick='deleteElement()']"));
         del.click();
         Thread.sleep(2000);
 
 
         //Add/Remove Elements” yazisinin gorunur oldugunu test edin
-        System.out.println("Is add/remove button displayed:" +sec.isDisplayed());
+        WebElement addRemove=driver.findElement(By.cssSelector("h3"));
+        System.out.println("Is add/remove button displayed:" +addRemove.isDisplayed());
 
         driver.close();
 
     }
+    /*
+    XPATH SYNTAX;
+        //tag_name[@attributeName='atributeDegeri']
+       // *[text()='metin ne varsa o buraya gelir']"));
+
+
+    CSSSELECTOR SYNTAX;
+        //tag_name[attributeName='metin ne varsa o buraya gelir'
+
+     RELATIVE XPATH SYNTAX;
+     with(By.tagName("buraya atribute degeri gelir")).below(locate aldigimiz xpath degiskeni buraya)
+
+
+    - Bir web sayfasında benzer özelliklere sahip webelementlerin olduğu durumlarda kullanılabilir
+    - above --> Belirtilen elementin üstünde olan elementi seçer
+    - below --> Belirtilen elementin altında olan elementi seçer
+    - to_left_of --> Belirtilen elementin solunda olan elementi seçer
+    - to_right_of --> Belirtilen elementin sağında olan elementi seçer
+    - near --> Belirtilen elementin yanında/yakınında olan elementi seçer
+
+
+ Xpath ve cssSelector arasindaki farklar;
+ 1)Xpath metin ile calisabilir, cssSelector calisamaz.
+ 2)Xpath daha fazla kombinasyona sahiptir ve index'e gore arama yapabilir.
+ 3)cssSelector index'e gore arama yapamaz ancak daha hizli calisir.
+ */
 }
