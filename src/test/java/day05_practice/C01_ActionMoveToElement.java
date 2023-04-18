@@ -51,10 +51,7 @@ driver.findElement(By.xpath("//input[@aria-labelledby='icp-save-button-announce'
         Thread.sleep(2000);
 
         // acilan yeni sayfadanin Title'inin Elektronik icerdigini test ediniz
-      driver.findElement(By.xpath("//span[@class='a-declarative']")).click();
-//        driver.findElement(By.id("sp-cc-rejectall-link']")).click();
-//        driver.manage().deleteAllCookies();
-        Thread.sleep(2000);
+                Thread.sleep(2000);
 
 
         Set<String> windowHandlesSet=driver.getWindowHandles();
